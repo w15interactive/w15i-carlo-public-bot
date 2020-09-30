@@ -40,13 +40,15 @@ db.once('open', () => {
 client.on('ready', async (message) => {
   console.log('Bot has logged in!');
   // Set the client user's presence
-  client.user.setPresence({
-    activity: {
-      name: `the Billion Ideas of the IndieDev World! I'm in ${client.guilds.cache.size} Servers.`,
-      type: 'LISTENING',
-    },
-    status: 'online',
-  });
+  setInterval(() => {
+    client.user.setPresence({
+      activity: {
+        name: `the Billion Ideas of the IndieDev World! I'm in ${client.guilds.cache.size} Servers.`,
+        type: 'LISTENING',
+      },
+      status: 'online',
+    });
+  }, 50000);
 });
 
 client.on('message', async (message) => {
