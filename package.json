@@ -1,0 +1,26 @@
+{
+  "name": "carlo-the-second",
+  "version": "1.0.0",
+  "description": "The Public Discordjs Bot, by W-15 Interactive",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node ./src/bot.js",
+    "dev": "nodemon ./src/bot.js"
+  },
+  "author": "W-15 Interactive",
+  "license": "ISC",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "discord-anti-spam": "^2.4.1",
+    "discord.js": "^12.3.1",
+    "discord.js-commando": "github:discordjs/Commando",
+    "dotenv": "^8.2.0",
+    "libsodium-wrappers": "^0.7.8",
+    "mongoose": "^5.10.7",
+    "path": "^0.12.7",
+    "random-puppy": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
