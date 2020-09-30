@@ -19,10 +19,6 @@ module.exports = class balanceCommand extends Command {
   }
 
   async run(message) {
-    if (checkChannel(message) == false) {
-      return;
-    }
-
     let amount = 300;
 
     Profile.findOne(
