@@ -33,11 +33,11 @@ module.exports = class voiceMuteCommand extends Command {
 
       // Iteration to mute/unmute every member in the call
       for (const [memberID, member] of channel.members) {
-        if (setting === 'mute') {
+        if (setting === 'mute' || setting === 'm') {
           if (member.voice.serverMute === false) {
             member.voice.setMute(true);
           }
-        } else if (setting === 'unmute') {
+        } else if (setting === 'unmute' || setting === 'u') {
           if (member.voice.serverMute === true) {
             member.voice.setMute(false);
           }
