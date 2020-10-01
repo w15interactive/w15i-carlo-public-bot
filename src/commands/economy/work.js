@@ -42,6 +42,7 @@ module.exports = class workCommand extends Command {
             const newProfile = new Profile({
               userID: message.author.id,
               serverID: message.guild.id,
+              serverName: message.guild.name,
               username: message.author.username,
               money: work,
             });
@@ -60,6 +61,7 @@ module.exports = class workCommand extends Command {
             });
           } else {
             profile.money = profile.money + work;
+            profile.serverName = message.guild.name;
             profile.save().catch((err) => console.log(err));
           }
 

@@ -6,9 +6,12 @@ const profileSchema = Schema({
   serverID: {
     type: String,
   },
+  serverName: {
+    type: String,
+  },
   userID: {
     type: String,
-    primaryKey: true,
+    required: true,
   },
   username: {
     type: String,

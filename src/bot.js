@@ -37,23 +37,30 @@ db.once('open', () => {
   console.log("We're connected!");
 });
 
-client.on('ready', async (message) => {
+client.on('ready', async () => {
   console.log('Bot has logged in!');
   // Set the client user's presence
-  setInterval(() => {
-    client.user.setPresence({
-      activity: {
-        name: `the Billion Ideas of the IndieDev World! I'm in ${client.guilds.cache.size} Servers.`,
-        type: 'LISTENING',
-      },
-      status: 'online',
-    });
-  }, 50000);
+
+  client.user.setPresence({
+    activity: {
+      name: `the Billion Ideas of the IndieDev World! I'm in ${client.guilds.cache.size.toLocaleString()} Servers.`,
+      type: 'LISTENING',
+    },
+    status: 'online',
+  });
 });
 
 client.on('message', async (message) => {
   if (message.author.bot) return;
   require('./events/moderation/antispam')(message);
+});
+
+client.on('guildCreate', (client, guild) => {
+  require('./events/guild/guildCreate')(client, guild);
+});
+
+client.on('guildDelete', (client, guild) => {
+  require('./events/guild/guildDelete')(client, guild);
 });
 
 client.login(process.env.BOT_TOKEN);

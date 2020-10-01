@@ -41,6 +41,7 @@ module.exports = class balanceCommand extends Command {
           const newProfile = new Profile({
             userID: message.author.id,
             serverID: message.guild.id,
+            serverName: message.guild.name,
             username: message.author.username,
             money: amount,
           });
@@ -62,6 +63,7 @@ module.exports = class balanceCommand extends Command {
           message.channel.send(embed);
 
           profile.money += amount;
+          profile.serverName = message.guild.name;
           profile.save().catch((err) => console.log(err));
         }
       }

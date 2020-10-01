@@ -62,7 +62,7 @@ module.exports = class buyCommand extends Command {
     // If there is not match, return
     if (!userProfile) {
       return message.channel.send(
-        'You do not have a registered Profile, please do `w!work` `w!daily` to register yourself.'
+        `You do not have a registered Profile, please do \`${this.client.commandPrefix}work\` \`${this.client.commandPrefix}daily\` to register yourself.`
       );
     }
     // If the user's Balance is less than the Item Cost, return
@@ -112,6 +112,7 @@ module.exports = class buyCommand extends Command {
         (err, profile) => {
           if (err) console.log(err);
           profile.money -= item.cost;
+          profile.serverName = message.guild.name;
           profile.save();
 
           transactionEmbed(item, userID, message);
@@ -133,6 +134,7 @@ module.exports = class buyCommand extends Command {
         async (err, profile) => {
           if (err) console.log(err);
           profile.money -= item.cost;
+          profile.serverName = message.guild.name;
           profile.save();
 
           transactionEmbed(item, userID, message);

@@ -48,7 +48,7 @@ module.exports = class payCommand extends Command {
 
     await Profile.findOne(
       {
-        userID: message.author.id,
+        userID: sender.id,
         serverID: message.guild.id,
       },
       (err, profile) => {
@@ -56,28 +56,17 @@ module.exports = class payCommand extends Command {
           console.log(err);
           return message.reply('Sorry, an error occurred!');
         }
+
         if (!profile) {
-          const newProfile = new Profile({
-            userID: message.author.id,
-            serverID: message.guild.id,
-            username: message.author.username,
-            money: 0,
-            items: null,
-          });
-
-          newProfile.save().catch((err) => console.error(err));
-
-          return message.reply(
-            "You can't make a payment since you do not have any coins associated with your account"
+          return message.channel.send(
+            `You do not have a registered Profile, please do \`${this.client.commandPrefix}work\` \`${this.client.commandPrefix}daily\` to register yourself.`
           );
+        } else if (profile.money < amount) {
+          message.reply(
+            'You do not have enough coins to complete the payment.'
+          );
+          return (hasAmount = false);
         } else {
-          if (profile.money < amount) {
-            message.reply(
-              'You do not have enough coins to complete the payment.'
-            );
-            return (hasAmount = false);
-          }
-
           hasAmount = true;
           profile.money = profile.money - amount;
           profile.save().catch((err) => console.log(err));
@@ -90,24 +79,26 @@ module.exports = class payCommand extends Command {
         userID: recipient.id,
         serverID: message.guild.id,
       },
-      (err, money) => {
+      (err, profile) => {
         if (err) {
           console.error(err);
           return message.reply('Sorry, an error occurred!');
         }
         if (hasAmount === false) return;
-        if (!money) {
-          const newMoney = new Profile({
+        if (!profile) {
+          const newProfile = new Profile({
             userID: recipient.id,
             serverID: message.guild.id,
+            serverName: message.guild.name,
             username: recipient.user.username,
             money: amount,
           });
 
-          newMoney.save().catch((err) => console.error(err));
+          newProfile.save().catch((err) => console.error(err));
         } else {
-          money.money += amount;
-          money.save().catch((err) => console.error(err));
+          profile.money += amount;
+          profile.serverName = message.guild.name;
+          profile.save().catch((err) => console.error(err));
         }
 
         const payEmbed = new Discord.MessageEmbed()
