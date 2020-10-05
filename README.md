@@ -5,6 +5,7 @@
 ### A public Discord Bot, developed by W-15 Interactive
 
 **Current Commands** (will be updated frequently):
+
 **Fun Commands**:
 
 - `coffee`: Gives the mentioned user OR the command caller a mug of coffee.
