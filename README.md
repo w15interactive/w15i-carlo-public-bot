@@ -6,7 +6,7 @@
 
 ### How to Use:
 >[Click here](https://discord.gg/cxWyzYu) to invite the bot to your Discord Server.
-Make sure that `Read Messages and See Voice Channels` and `Mute Members` Permissions are `ENABLED`!
+Make sure that `Read Text Channels & See Voice Channels` and `Mute Members` Permissions are `ENABLED`!
 
 To run a command, use `w-<command>` or `@W-15i - Carlo II#6167 command`. For example, `w-prefix` or `@W-15i - Carlo II#6167 prefix`.
 
@@ -40,7 +40,7 @@ Use `help all` to view a list of all commands, not just available ones.
 
 - `poll`: Puts an automatic poll. 'Manage Messages' permission required.
 - `userinfo`: Shows the user's info
-- `voicemute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required. Used a lot in [Among Us](http://www.innersloth.com/gameAmongUs.php) lobbies
+- `voicemute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required. Used a lot by our clients in [Among Us](http://www.innersloth.com/gameAmongUs.php) lobbies.
  
 ##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
