@@ -15,7 +15,6 @@
 * `buy`: Buys an Item from the Shop.
 * `daily`: Gives daily reward.
 * `inventory`: Opens the specified user's inventory.
-* `invest`: Invests 5000 Sylva per person on the bot, to get double the money back next week.
 * `leaderboard`: Opens up the user leaderboard.
 * `pay`: Pays the mentioned member.
 * `shop`: Opens the Shop Page.
