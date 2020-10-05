@@ -4,11 +4,11 @@
 
 **Current Commands** (will be updated frequently)"
 **Fun Commands**:
-`coffee` Gives the mentioned user OR the command caller a mug of coffee.
-`coinflip`: Flips a coin, landing either heads or tails.
-`doubleroll`: Rolls two dices.
-`memes`: Posts a random meme.
-`shostadrugs`: Feed's mentioned member some cheap drugs.
+*`coffee`: Gives the mentioned user OR the command caller a mug of coffee.
+*`coinflip`: Flips a coin, landing either heads or tails.
+*`doubleroll`: Rolls two dices.
+*`memes`: Posts a random meme.
+*`shostadrugs`: Feed's mentioned member some cheap drugs.
 
 **Economy Commands**:
 `bal`: Checks user or mentioned member's balance.
