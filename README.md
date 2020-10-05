@@ -3,6 +3,8 @@
 ![W-15i: Carlo II](/src/images/logo.png)
 ### A public Discord Bot, developed by W-15 Interactive
 ## 
+:link: Website Page: (https://w15interactive.home.blog/carlo-ii-the-bot/)
+##
 
 ### How to Use:
 >[Click here](https://discord.gg/cxWyzYu) to invite the bot to your Discord Server.
