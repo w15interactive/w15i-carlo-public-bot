@@ -50,9 +50,8 @@ client.on('ready', async () => {
   });
 });
 
-client.on('message', async (message) => {
+client.on('message', (message) => {
   if (message.author.bot) return;
-  require('./events/moderation/antispam')(message);
 });
 
 client.on('guildCreate', (client, guild) => {
