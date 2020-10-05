@@ -1,6 +1,6 @@
 # W-15i: Carlo II
 
-![W-15i: Carlo II]('./Carlo The Second.jpg')
+![W-15i: Carlo II](/src/images/logo.png)
 
 ### A public Discord Bot, developed by W-15 Interactive
 
