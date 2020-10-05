@@ -40,7 +40,7 @@ Use `help all` to view a list of all commands, not just available ones.
 
 - `poll`: Puts an automatic poll. 'Manage Messages' permission required.
 - `userinfo`: Shows the user's info
-- `voicemute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required. Used a lot by our clients in [Among Us](http://www.innersloth.com/gameAmongUs.php) lobbies.
+- `voicechannel mute/unmute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required. Used a lot by our clients in [Among Us](http://www.innersloth.com/gameAmongUs.php) lobbies.
  
 ##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
