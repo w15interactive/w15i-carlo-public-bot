@@ -1,10 +1,18 @@
 # W-15i: Carlo II
 
 ![W-15i: Carlo II](/src/images/logo.png)
-
 ### A public Discord Bot, developed by W-15 Interactive
+## 
 
-**Current Commands** (will be updated frequently):
+### How to use
+To run a command, use `w-<command>` or `@W-15i - Carlo II#6167 command`. For example, `w-prefix` or `@W-15i - Carlo II#6167 prefix`.
+
+Use `help <command>` to view detailed information about a specific command.
+Use `help all` to view a list of all commands, not just available ones.
+##
+
+
+### Current Commands (will be updated frequently):
 
 **Fun Commands**:
 
@@ -30,7 +38,8 @@
 - `poll`: Puts an automatic poll. 'Manage Messages' permission required.
 - `userinfo`: Shows the user's info
 - `voicemute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required.
-
+ 
+##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
 
-[Click Here!](https://discord.gg/cxWyzYu)
+[Click Here](https://discord.gg/cxWyzYu)
