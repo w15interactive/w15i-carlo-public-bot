@@ -1,4 +1,4 @@
-# W-15i: Carlo II
+# W-15i: Carlo II, The Bot
 
 ![W-15i: Carlo II](/src/images/logo.png)
 ### A public Discord Bot, developed by W-15 Interactive
