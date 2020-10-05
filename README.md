@@ -29,3 +29,7 @@
 - `poll`: Puts an automatic poll. 'Manage Messages' permission required.
 - `userinfo`: Shows the user's info
 - `voicemute`: Voice mutes everyone in the voice call the invoker is in. 'Mute Members' permission required.
+
+### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
+
+[Click Here!](https://discord.gg/cxWyzYu)
