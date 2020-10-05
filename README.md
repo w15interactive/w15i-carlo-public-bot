@@ -42,4 +42,4 @@ Use `help all` to view a list of all commands, not just available ones.
 ##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
 
-[Click Here](https://discord.gg/cxWyzYu)
+### [Click Here!](https://discord.gg/cxWyzYu)
