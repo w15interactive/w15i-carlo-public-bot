@@ -10,7 +10,7 @@
 ##
 
 ### How to Use:
->[Click here](https://discord.gg/cxWyzYu) to invite the bot to your Discord Server.
+>[Click here](https://discord.com/oauth2/authorize?client_id=751421550909194280&permissions=1347807296&scope=bot) to invite the bot to your Discord Server.
 Make sure that `Read Text Channels & See Voice Channels` and `Mute Members` Permissions are `ENABLED`!
 
 To run a command, use `w-<command>` or `@W-15i - Carlo II#6167 command`. For example, `w-prefix` or `@W-15i - Carlo II#6167 prefix`.
