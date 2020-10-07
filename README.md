@@ -1,6 +1,5 @@
-# W-15i: Carlo II, The Bot
-
 ![W-15i: Carlo II](/src/images/logo.png)
+# 🤖 W-15i: Carlo II, The Bot
 ### A public Discord Bot, developed by W-15 Interactive
 ## 
 :link: Website Page: (https://w15interactive.home.blog/carlo-ii-the-bot/)
@@ -17,7 +16,7 @@ Use `help all` to view a list of all commands, not just available ones.
 ##
 
 
-### Current Commands (will be updated frequently):
+### 📝 Current Commands (will be updated frequently):
 
 **Fun Commands**:
 
@@ -46,5 +45,5 @@ Use `help all` to view a list of all commands, not just available ones.
  
 ##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
-
+[![Discord](https://discordapp.com/api/guilds/533691583845892100/widget.png)](https://discord.gg/cxWyzYu)
 ### [Click Here!](https://discord.gg/cxWyzYu)
