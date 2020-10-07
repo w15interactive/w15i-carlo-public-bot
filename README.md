@@ -2,7 +2,7 @@
 # 🤖 W-15i: Carlo II, The Bot
 
 ![discord.js version](https://img.shields.io/badge/discord.js-v12.3.1-blue.svg?logo=npm")
-[![Discord](https://discordapp.com/api/guilds/533691583845892100/widget.png)](https://discord.gg/cxWyzYu)
+[![Discord](https://img.shields.io/discord/533691583845892100.svg?colorB=7289da&label=discord&logo=Discord&logoColor=fff&style=flat)](https://discord.gg/cxWyzYu)
 ### A public Discord Bot, developed by W-15 Interactive
 
 ## 
