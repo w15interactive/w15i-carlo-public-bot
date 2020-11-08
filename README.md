@@ -1,11 +1,16 @@
-# W-15i: Carlo II, The Bot
-
 ![W-15i: Carlo II](/src/images/logo.png)
+# 🤖 W-15i: Carlo II, The Bot
+
+![discord.js version](https://img.shields.io/badge/discord.js-v12.3.1-blue.svg?logo=npm")
+[![Discord](https://img.shields.io/discord/533691583845892100.svg?colorB=7289da&label=discord&logo=Discord&logoColor=fff&style=flat)](https://discord.gg/cxWyzYu)
 ### A public Discord Bot, developed by W-15 Interactive
+
 ## 
+:link: Website Page: (https://w15interactive.home.blog/carlo-ii-the-bot/)
+##
 
 ### How to Use:
->[Click here](https://discord.gg/cxWyzYu) to invite the bot to your Discord Server.
+>[Click here](https://discord.com/oauth2/authorize?client_id=751421550909194280&permissions=1347807296&scope=bot) to invite the bot to your Discord Server.
 Make sure that `Read Text Channels & See Voice Channels` and `Mute Members` Permissions are `ENABLED`!
 
 To run a command, use `w-<command>` or `@W-15i - Carlo II#6167 command`. For example, `w-prefix` or `@W-15i - Carlo II#6167 prefix`.
@@ -15,7 +20,7 @@ Use `help all` to view a list of all commands, not just available ones.
 ##
 
 
-### Current Commands (will be updated frequently):
+### 📝 Current Commands (will be updated frequently):
 
 **Fun Commands**:
 
@@ -44,5 +49,4 @@ Use `help all` to view a list of all commands, not just available ones.
  
 ##
 ### Join the Official Bot Discord Server, 'W-15i: Overworld' for support and FAQs!
-
 ### [Click Here!](https://discord.gg/cxWyzYu)
