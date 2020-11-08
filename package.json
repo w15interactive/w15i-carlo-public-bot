@@ -1,6 +1,6 @@
 {
   "name": "carlo-the-second",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Public Discordjs Bot, by W-15 Interactive",
   "main": "bot.js",
   "scripts": {

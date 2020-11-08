@@ -45,12 +45,12 @@ module.exports = class leaderboardCommand extends Command {
               message.guild.members.cache.get(res[i].userID) || 'User Left';
             if (member === 'User Left') {
               embed.addField(
-                `${i + 1}. ${member}`,
+                `${i + 1}. ${res[i].username}`,
                 `**Money**: ${res[i].money}`
               );
             } else {
               embed.addField(
-                `${i + 1}. ${member.user.username}`,
+                `${i + 1}. ${res[i].username}`,
                 `**Money**: ${res[i].money}`
               );
             }
@@ -59,16 +59,15 @@ module.exports = class leaderboardCommand extends Command {
           //More than 10 results
           embed.setColor('BLURPLE');
           for (let i = 0; i < 10; i++) {
-            let member =
-              message.guild.members.cache.get(res[i].userID) || 'User Left';
+            let member = message.guild.members.cache.get(res[i].userID);
             if (member === 'User Left') {
               embed.addField(
-                `${i + 1}. ${member}`,
-                `**Money**: ${res[i].coins}`
+                `${i + 1}. ${res[i].username}`,
+                `**Money**: ${res[i].money}`
               );
             } else {
               embed.addField(
-                `${i + 1}. ${member.user.username}`,
+                `${i + 1}. ${res[i].username}`,
                 `**Money**: ${res[i].money}`
               );
             }

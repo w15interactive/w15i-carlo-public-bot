@@ -26,11 +26,13 @@ module.exports = class balanceCommand extends Command {
   async run(message) {
     const user = message.mentions.users.first() || message.author;
 
-    Profile.findOne(
+    Profile.findOneAndUpdate(
       {
         userID: user.id,
         serverID: message.guild.id,
       },
+      { username: user.username },
+      { new: true },
       (err, profile) => {
         if (err) console.log(err);
         if (!profile) {
@@ -38,7 +40,6 @@ module.exports = class balanceCommand extends Command {
             `${user.username}, you don\'t have any money.`
           );
         } else {
-          profile.money = profile.money;
           message.channel.send(
             `${user.username}, you have ${profile.money} Sylva.`
           );

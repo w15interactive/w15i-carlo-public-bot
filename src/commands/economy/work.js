@@ -19,23 +19,35 @@ module.exports = class workCommand extends Command {
   }
 
   async run(message) {
+    let work = Math.floor(Math.random() * 500);
+
     const jobs = [
-      'Game Developer',
-      'Full-Stack Web Developer',
-      'Barista',
-      'Part-time Officer',
+      `you worked as a **Game Developer** and did some debugging on the game. You earned **${work} Sylva**!`,
+      `you worked as a **Full-Stack Web Developer** and improved your backend, it's more efficient now!. You earned **${work} Sylva**!`,
+      `you worked as a **Barista** and made a few espressos and lattes. You earned **${work} Sylva**!`,
+      `you worked as a **Part-time Officer** and patrolled the streets of Adalia. You earned **${work} Sylva**!`,
+      `you worked as a **Music Artist**, composing some bops, You earned **${work} Sylva**!`,
+      `you worked as a **3D Graphics Designer**, you progressed on one of your renders today. You earned **${work} Sylva**!`,
+      `you worked as a **Gym Instructor** and made people do some important drills. You earned **${work} Sylva**!`,
+      `you worked as an **eSports Player** and participated in competitive scrims. You earned **${work} Sylva**!`,
+      `you worked as a **Content Creator**, produced some videos, and published it online! You earned **${work} Sylva**!`,
+      `you worked as an **IT Technician**, fixing some software and hardware fault on PCs. You earned **${work} Sylva**!`,
+      `you worked as a **Taxi Driver**, getting people to their destinations safely. You earned **${work} Sylva**!`,
+      `you worked as a **Construction Worker**, seeing off the construction of the building. You earned **${work} Sylva**!`,
     ];
+
     let job = jobs[Math.floor(Math.random() * jobs.length)];
 
-    let work = Math.floor(Math.random() * 500);
     if (work === 0) {
       return message.reply(`you failed in your work!`);
     } else {
-      Profile.findOne(
+      Profile.findOneAndUpdate(
         {
           userID: message.author.id,
           serverID: message.guild.id,
         },
+        { username: message.author.username },
+        { new: true },
         (err, profile) => {
           if (err) console.log(err);
           if (!profile) {
@@ -60,16 +72,12 @@ module.exports = class workCommand extends Command {
               },
             });
           } else {
-            profile.money = profile.money + work;
+            profile.money += work;
             profile.serverName = message.guild.name;
             profile.save().catch((err) => console.log(err));
           }
 
-          message
-            .say(
-              `${message.author.username}, you worked as a **${job}** and earned **${work} Sylva!**`
-            )
-            .catch((err) => console.log(err));
+          message.say(job).catch((err) => console.log(err));
         }
       );
     }
