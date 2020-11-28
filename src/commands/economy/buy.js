@@ -18,7 +18,9 @@ const transactionEmbed = (item, id, message) => {
   message.channel.send(embed);
 };
 
-module.exports = class buyCommand extends Command {
+module.exports = class buyCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'buy',
@@ -48,7 +50,7 @@ module.exports = class buyCommand extends Command {
 
     // Search for the CurrencyShop Database for the specific item name
     const item = await CurrencyShop.findOne({
-      name: { $regex: `.*${argsText}.*` },
+      name: { $regex: `.*${argsText}.*`, $options: 'i' },
     });
 
     // If there is no match, return
