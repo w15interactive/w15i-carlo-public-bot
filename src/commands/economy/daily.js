@@ -1,8 +1,10 @@
 const { Command } = require('discord.js-commando');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 const Discord = require('discord.js');
 
-module.exports = class balanceCommand extends Command {
+module.exports = class balanceCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'daily',
@@ -24,7 +26,6 @@ module.exports = class balanceCommand extends Command {
     Profile.findOne(
       {
         userID: message.author.id,
-        serverID: message.guild.id,
       },
       (err, profile) => {
         if (err) console.log(err);
@@ -40,8 +41,6 @@ module.exports = class balanceCommand extends Command {
         if (!profile) {
           const newProfile = new Profile({
             userID: message.author.id,
-            serverID: message.guild.id,
-            serverName: message.guild.name,
             username: message.author.username,
             money: amount,
           });
@@ -63,7 +62,6 @@ module.exports = class balanceCommand extends Command {
           message.channel.send(embed);
 
           profile.money += amount;
-          profile.serverName = message.guild.name;
           profile.save().catch((err) => console.log(err));
         }
       }

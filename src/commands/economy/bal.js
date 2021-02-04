@@ -1,8 +1,10 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 
-module.exports = class balanceCommand extends Command {
+module.exports = class balanceCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'bal',
@@ -29,7 +31,6 @@ module.exports = class balanceCommand extends Command {
     Profile.findOneAndUpdate(
       {
         userID: user.id,
-        serverID: message.guild.id,
       },
       { username: user.username },
       { new: true },

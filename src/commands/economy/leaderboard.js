@@ -1,9 +1,11 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 const Discord = require('discord.js');
 
-module.exports = class leaderboardCommand extends Command {
+module.exports = class leaderboardCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'leaderboard',
@@ -21,8 +23,8 @@ module.exports = class leaderboardCommand extends Command {
   }
 
   async run(message) {
-    //Grab all of the users in said server
-    await Profile.find({ serverID: message.guild.id })
+    //Grab all of the users
+    await Profile.find({})
       .sort([['money', 'descending']])
       .exec((err, res) => {
         if (err) console.log(err);

@@ -1,8 +1,10 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 
-module.exports = class workCommand extends Command {
+module.exports = class workCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'work',
@@ -12,7 +14,7 @@ module.exports = class workCommand extends Command {
       guildOnly: true,
       throttling: {
         usages: 1,
-        duration: 1500,
+        duration: 1800,
       },
       examples: ['`w!work`'],
     });
@@ -44,7 +46,6 @@ module.exports = class workCommand extends Command {
       Profile.findOneAndUpdate(
         {
           userID: message.author.id,
-          serverID: message.guild.id,
         },
         { username: message.author.username },
         { new: true },
@@ -53,8 +54,6 @@ module.exports = class workCommand extends Command {
           if (!profile) {
             const newProfile = new Profile({
               userID: message.author.id,
-              serverID: message.guild.id,
-              serverName: message.guild.name,
               username: message.author.username,
               money: work,
             });
@@ -73,7 +72,6 @@ module.exports = class workCommand extends Command {
             });
           } else {
             profile.money += work;
-            profile.serverName = message.guild.name;
             profile.save().catch((err) => console.log(err));
           }
 

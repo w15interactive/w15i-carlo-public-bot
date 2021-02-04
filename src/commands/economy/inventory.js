@@ -1,9 +1,11 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 const Discord = require('discord.js');
 
-module.exports = class invCommand extends Command {
+module.exports = class invCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'inventory',
@@ -24,7 +26,6 @@ module.exports = class invCommand extends Command {
     const target = message.mentions.users.first() || message.author;
 
     await Profile.findOne({
-      serverID: message.guild.id,
       userID: target.id,
     }).exec((err, res) => {
       if (err) console.log(err);

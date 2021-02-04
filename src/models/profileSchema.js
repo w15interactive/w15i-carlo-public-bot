@@ -3,12 +3,6 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const profileSchema = Schema({
-  serverID: {
-    type: String,
-  },
-  serverName: {
-    type: String,
-  },
   userID: {
     type: String,
     required: true,

@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const UserItemsSchema = mongoose.Schema({
-  serverID: {
-    type: String,
-    required: true,
-  },
   userID: {
     type: String,
     primaryKey: true,

@@ -1,9 +1,11 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('../../models/profileSchema');
+const Profile = require('@models/profileSchema');
 const Discord = require('discord.js');
 
-module.exports = class payCommand extends Command {
+module.exports = class payCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'pay',
@@ -49,7 +51,6 @@ module.exports = class payCommand extends Command {
     await Profile.findOne(
       {
         userID: sender.id,
-        serverID: message.guild.id,
       },
       (err, profile) => {
         if (err) {
@@ -77,7 +78,6 @@ module.exports = class payCommand extends Command {
     await Profile.findOne(
       {
         userID: recipient.id,
-        serverID: message.guild.id,
       },
       (err, profile) => {
         if (err) {
@@ -88,8 +88,6 @@ module.exports = class payCommand extends Command {
         if (!profile) {
           const newProfile = new Profile({
             userID: recipient.id,
-            serverID: message.guild.id,
-            serverName: message.guild.name,
             username: recipient.user.username,
             money: amount,
           });
@@ -97,7 +95,6 @@ module.exports = class payCommand extends Command {
           newProfile.save().catch((err) => console.error(err));
         } else {
           profile.money += amount;
-          profile.serverName = message.guild.name;
           profile.save().catch((err) => console.error(err));
         }
 

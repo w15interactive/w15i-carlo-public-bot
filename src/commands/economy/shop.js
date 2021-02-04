@@ -1,9 +1,11 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
 const Discord = require('discord.js');
-const CurrencyShop = require('../../models/CurrencyShopSchema');
+const CurrencyShop = require('@models/CurrencyShopSchema');
 
-module.exports = class shopCommand extends Command {
+module.exports = class shopCommand extends (
+  Command
+) {
   constructor(client) {
     super(client, {
       name: 'shop',

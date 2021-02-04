@@ -1,8 +1,8 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const UserItems = require('../../models/UserItemsSchema');
-const Profile = require('../../models/profileSchema');
-const CurrencyShop = require('../../models/CurrencyShopSchema');
+const UserItems = require('@models/UserItemsSchema');
+const Profile = require('@models/profileSchema');
+const CurrencyShop = require('@models/CurrencyShopSchema');
 const { MessageEmbed } = require('discord.js');
 
 //Transaction Successful Embed
@@ -38,7 +38,6 @@ module.exports = class buyCommand extends (
 
   async run(message) {
     // Starting declarations for easier use
-    const serverID = message.guild.id;
     const userID = message.author.id;
     const username = message.author.username;
     const args = message.content.trim().split(/ +/g);
@@ -58,8 +57,8 @@ module.exports = class buyCommand extends (
       return message.channel.send(`That item doesn't exist.`);
     }
 
-    // Search for a user with that userID in the server(serverID)
-    const userProfile = await Profile.findOne({ serverID, userID });
+    // Search for a user with that userID
+    const userProfile = await Profile.findOne({ userID });
 
     // If there is not match, return
     if (!userProfile) {
@@ -74,20 +73,18 @@ module.exports = class buyCommand extends (
       );
     }
 
-    // Search for a user (by userID) with the specific item (itemID, itemName) registered in the server(serverID)
+    // Search for a user (by userID) with the specific item (itemID, itemName)
     const itemInInv = await UserItems.findOne({
-      serverID,
       userID,
       itemID: item.id,
       itemName: item.name,
     });
 
     /* If there is no match, register the specific item (itemID, itemName, desc, amount)
-    under the user (userID, username) in the server (serverID)*/
+    under the user (userID, username)*/
     if (!itemInInv) {
       console.log('This is a First-Bought Item.');
       const newUserItem = new UserItems({
-        serverID,
         userID,
         username,
         itemID: item.id,
@@ -98,7 +95,7 @@ module.exports = class buyCommand extends (
       newUserItem.save();
 
       Profile.findOneAndUpdate(
-        { userID, serverID },
+        { userID },
         {
           $addToSet: {
             items: [
@@ -114,7 +111,6 @@ module.exports = class buyCommand extends (
         (err, profile) => {
           if (err) console.log(err);
           profile.money -= item.cost;
-          profile.serverName = message.guild.name;
           profile.save();
 
           transactionEmbed(item, userID, message);
@@ -127,7 +123,7 @@ module.exports = class buyCommand extends (
       itemInInv.save();
 
       Profile.findOneAndUpdate(
-        { userID, serverID, 'items.itemID': item.id },
+        { userID, 'items.itemID': item.id },
         {
           $inc: {
             'items.$.amount': 1,
@@ -136,7 +132,6 @@ module.exports = class buyCommand extends (
         async (err, profile) => {
           if (err) console.log(err);
           profile.money -= item.cost;
-          profile.serverName = message.guild.name;
           profile.save();
 
           transactionEmbed(item, userID, message);
