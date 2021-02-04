@@ -49,6 +49,12 @@ module.exports = class coinFlipCommand extends (
       amount = 0;
     }
 
+    if (amount < 0) {
+      return message.channel.send(
+        'You cannot make a bet for less than 0 Sylva!'
+      );
+    }
+
     let result = '';
 
     const coinFlip = Math.floor(Math.random() * 2);
