@@ -1,15 +1,13 @@
 const { Command, CommandoMessage } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 
-const Profile = require(`@models/profileSchema`);
+const Profile = require(`../../models/profileSchema`);
 
 /**
  * @param {CommandoMessage} message
  */
 
-module.exports = class coinFlipCommand extends (
-  Command
-) {
+module.exports = class coinFlipCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'coinflip',

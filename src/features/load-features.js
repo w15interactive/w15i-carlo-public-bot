@@ -11,7 +11,7 @@ module.exports = (client) => {
       } else if (file !== 'load-features.js') {
         const feature = require(path.join(__dirname, dir, file));
         console.log(`Enabling feature "${file}"`);
-        feature(client)
+        feature(client);
       }
     }
   };

@@ -1,8 +1,8 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const UserItems = require('@models/UserItemsSchema');
-const Profile = require('@models/profileSchema');
-const CurrencyShop = require('@models/CurrencyShopSchema');
+const UserItems = require('../../models/UserItemsSchema');
+const Profile = require('../../models/profileSchema');
+const CurrencyShop = require('../../models/CurrencyShopSchema');
 const { MessageEmbed } = require('discord.js');
 
 //Transaction Successful Embed
@@ -18,9 +18,7 @@ const transactionEmbed = (item, id, message) => {
   message.channel.send(embed);
 };
 
-module.exports = class buyCommand extends (
-  Command
-) {
+module.exports = class buyCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'buy',

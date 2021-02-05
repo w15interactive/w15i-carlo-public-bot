@@ -1,10 +1,8 @@
 const { Command } = require('discord.js-commando');
 const mongoose = require('mongoose');
-const Profile = require('@models/profileSchema');
+const Profile = require('../../models/profileSchema');
 
-module.exports = class workCommand extends (
-  Command
-) {
+module.exports = class workCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'work',

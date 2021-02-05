@@ -1,6 +1,6 @@
-const mongo = require('@utils/mongo');
-const loadFeatures = require('@src/features/load-features');
-const updateMembers = require('@utils/member/update-members');
+const mongo = require('../../../utils/mongo');
+const loadFeatures = require('../../../features/load-features');
+const updateMembers = require('../../../utils/member/update-members');
 
 module.exports = async (client) => {
   loadFeatures(client);

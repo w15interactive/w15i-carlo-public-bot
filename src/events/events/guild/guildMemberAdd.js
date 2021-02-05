@@ -1,6 +1,6 @@
 const { GuildMember, MessageEmbed } = require('discord.js');
 const { CommandoClient } = require('discord.js');
-const updateMembers = require('@utils/member/update-members');
+const updateMembers = require('../../../utils/member/update-members');
 
 /**
  * @param { GuildMember } member

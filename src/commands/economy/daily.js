@@ -1,10 +1,8 @@
 const { Command } = require('discord.js-commando');
-const Profile = require('@models/profileSchema');
+const Profile = require('../../models/profileSchema');
 const Discord = require('discord.js');
 
-module.exports = class balanceCommand extends (
-  Command
-) {
+module.exports = class balanceCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'daily',

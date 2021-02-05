@@ -19,7 +19,7 @@ client.registry
   .registerDefaultCommands()
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-const loadEvents = require('@src/events/load-events');
+const loadEvents = require('./events/load-events');
 loadEvents(client);
 
 client.login(process.env.BOT_TOKEN);
