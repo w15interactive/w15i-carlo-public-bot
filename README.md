@@ -10,15 +10,7 @@
 ##
 
 ### How to Use:
-Bot deprecated
-Make sure that `Read Text Channels & See Voice Channels` and `Mute Members` Permissions are `ENABLED`!
-
-To run a command, use `w-<command>` or `@W-15i - Carlo II#6167 command`. For example, `w-prefix` or `@W-15i - Carlo II#6167 prefix`.
-
-Use `help <command>` to view detailed information about a specific command.
-Use `help all` to view a list of all commands, not just available ones.
-##
-
+#### Bot deprecated
 
 ### 📝 Current Commands (will be updated frequently):
 
