@@ -1,6 +1,7 @@
 ![W-15i: Carlo II](/src/images/logo.png)
 # 🤖 W-15i: Carlo II, The Bot
 
+![GitHub last commit](https://img.shields.io/github/last-commit/W-15-Interactive/w15i-carlo-public-bot?label=last%20commit)
 [![discord.js version](https://img.shields.io/badge/discord.js-v12.4.1-blue.svg?logo=npm")](https://discord.js.org/#/)
 [![Discord](https://img.shields.io/discord/533691583845892100.svg?colorB=7289da&label=discord&logo=Discord&logoColor=fff&style=flat)](https://discord.gg/cxWyzYu)
 ### A public Discord Bot, developed by W-15 Interactive
